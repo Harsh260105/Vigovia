@@ -159,7 +159,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-[10px] sm:text-xs text-white text-center sm:text-left">
-              © 2023 Vigovia Travel Technologies (P) Ltd. All rights reserved.
+              © {new Date().getFullYear()} Vigovia Travel Technologies (P) Ltd. All rights reserved.
             </div>
 
             {/* Social Media Icons */}
