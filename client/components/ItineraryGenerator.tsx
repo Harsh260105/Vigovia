@@ -166,7 +166,9 @@ export default function ItineraryGenerator() {
         <div className="max-w-7xl mx-auto py-6 px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <img src="../vigovia-logo.svg" alt="Vigovia" className="w-32" />
+              <a href="/">
+                <img src="../vigovia-logo.svg" alt="Vigovia" className="w-32" />
+              </a>
               <div className="h-8 w-px bg-black"></div>
               <h1 className="text-2xl font-bold text-purple-900 font-poppins tracking-wide">
                 Itinerary Generator
