@@ -61,7 +61,7 @@ export default function Footer() {
       <div className="bg-white border-t border-gray-200">
         {/* Tour Packages - Top Section */}
         <div className="max-w-7xl mx-auto px-4 py-4 border-b border-gray-200">
-          <div className="flex flex-wrap gap-x-5 gap-y-1 justify-center text-[12px]">
+          <div className="flex flex-wrap gap-x-3 sm:gap-x-5 gap-y-1 justify-center text-[10px] sm:text-[12px]">
             {allPackages.map((pkg, index) => (
               <a
                 key={index}
@@ -76,18 +76,18 @@ export default function Footer() {
 
         <div className="max-w-7xl mx-auto px-4 py-6 relative">
           {/* Menu Sections */}
-          <div className="grid grid-cols-5 gap-8 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-8 lg:pr-64">
             {menuSections.map((section, idx) => (
               <div key={idx}>
-                <h4 className="font-medium text-gray-900 mb-3 text-sm">
+                <h4 className="font-medium text-gray-900 mb-3 text-xs sm:text-sm">
                   {section.title}
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-1 sm:space-y-2">
                   {section.items.map((item, itemIdx) => (
                     <li key={itemIdx}>
                       <a
                         href="#"
-                        className="text-xs text-gray-600 hover:text-purple-600 transition-colors"
+                        className="text-[10px] sm:text-xs text-gray-600 hover:text-purple-600 transition-colors"
                       >
                         {item}
                       </a>
@@ -99,37 +99,37 @@ export default function Footer() {
           </div>
 
           {/* Logo and Payments Row */}
-          <div className="border-t border-gray-200 mt-10"></div>
+          <div className="border-t border-gray-200 mt-14"></div>
 
           {/* Logo and Payment Methods */}
-          <div className="flex items-center border-gray-200 pt-8 ml-20">
-              <div className="flex-1">
-                <img src="../vigovia-logo.svg" alt="Vigovia" className="w-32" />
+          <div className="flex flex-col sm:flex-row items-center border-gray-200 pt-6 gap-4">
+              <div className="flex-shrink-0 sm:pl-8">
+                <img src="../vigovia-logo.svg" alt="Vigovia" className="w-24 sm:w-32" />
               </div>
-              <div className="flex-1 flex justify-center">
+              <div className="flex-1 flex justify-center mr-10">
                 <div>
-                  <div className="text-xs text-gray-500 mb-2 text-center">
+                  <div className="text-xs text-gray-500 mb-2.5 text-center">
                     Payments
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <img src="/Razorpay.svg" alt="Razorpay" className="h-10 border border-gray-200 rounded px-2 cursor-pointer" />
+                  <div className="flex items-center space-x-2 sm:space-x-4">
+                    <img src="/Razorpay.svg" alt="Razorpay" className="h-8 sm:h-10 border border-gray-200 rounded px-2 cursor-pointer" />
                     <img
                       src="/stripe-svgrepo-com.svg"
                       alt="Stripe"
-                      className="h-10 border border-b-gray-200 rounded px-2 cursor-pointer"
+                      className="h-8 sm:h-10 border border-b-gray-200 rounded px-2 cursor-pointer"
                     />
                   </div>
                 </div>
               </div>
-              <div className="flex-1"></div>
+              <div className="flex-shrink-0 sm:pr-8"></div>
           </div>
 
           {/* Contact Information */}
-          <div className="absolute top-6 right-6 md:right-6 lg:right-6 xl:right-6 w-auto hidden md:block">
-            <div className="bg-purple-700 text-white p-4 rounded-lg">
+          <div className="sm:absolute sm:top-6 sm:right-6 w-full sm:w-auto">
+            <div className="bg-purple-700 text-white p-3 sm:p-4 rounded-lg">
               <div className="text-center mb-3">
                 <div className="text-xs font-medium">Need Help? Call Us</div>
-                <div className="text-base font-bold">+91-98xxxx6441</div>
+                <div className="text-sm sm:text-base font-bold">+91-98xxxx6441</div>
               </div>
 
               <div className="space-y-2 text-xs">
@@ -157,25 +157,25 @@ export default function Footer() {
       {/* Bottom Section with Purple Background */}
       <div className="bg-[#5F2EEA] py-4">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="text-xs text-white">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-[10px] sm:text-xs text-white text-center sm:text-left">
               © 2023 Vigovia Travel Technologies (P) Ltd. All rights reserved.
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
                 <a
                   key={idx}
                   href="#"
-                  className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-6 h-6 sm:w-8 sm:h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
-                  <Icon className="w-4 h-4 text-white" />
+                  <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </a>
               ))}
             </div>
             {/* Legal Links */}
-            <div className="flex space-x-4 text-xs text-white">
+            <div className="flex flex-wrap justify-center sm:justify-end space-x-2 sm:space-x-4 text-[10px] sm:text-xs text-white">
               <a href="#" className="hover:text-white/80 transition-colors">
                 Privacy policy
               </a>

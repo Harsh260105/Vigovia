@@ -163,27 +163,28 @@ export default function ItineraryGenerator() {
     <div className="min-h-screen bg-gradient-to-br from-travel-light to-white">
       {/* Header with Logo */}
       <div className="sticky top-0 z-50 backdrop-blur-md bg-white/10 shadow-lg border-b border-white/20 supports-[backdrop-filter]:bg-white/5">
-        <div className="max-w-7xl mx-auto py-6 px-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-8">
+        <div className="max-w-7xl mx-auto py-4 px-4 sm:py-6 sm:px-6">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center space-x-4 sm:space-x-8">
               <a href="/">
-                <img src="../vigovia-logo.svg" alt="Vigovia" className="w-32" />
+                <img src="../vigovia-logo.svg" alt="Vigovia" className="w-24 sm:w-32" />
               </a>
-              <div className="h-8 w-px bg-black"></div>
-              <h1 className="text-2xl font-bold text-purple-900 font-poppins tracking-wide">
+              <div className="h-6 sm:h-8 w-px bg-black hidden sm:block"></div>
+              <h1 className="text-lg sm:text-2xl font-bold text-purple-900 font-poppins tracking-wide">
                 Itinerary Generator
               </h1>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center">
               <Button
                 onClick={loadDemoData}
                 variant="outline"
                 size="sm"
-                className="my-2 bg-travel-primary/70 border-white/20 text-white hover:text-gray-100 hover:bg-travel-primary/90 hover:border-white/30 transition-all duration-200"
+                className="bg-travel-primary/70 border-white/20 text-white hover:text-gray-100 hover:bg-travel-primary/90 hover:border-white/30 transition-all duration-200 text-xs sm:text-sm"
               >
-                <div className="flex items-center space-x-2">
-                  <Plus className="w-4 h-4" />
-                  <span>Load Demo Data</span>
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="hidden sm:inline">Load Demo Data</span>
+                  <span className="sm:hidden">Demo</span>
                 </div>
               </Button>
             </div>
@@ -191,14 +192,14 @@ export default function ItineraryGenerator() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6">
         {/* Progress Steps */}
-        <div className="mb-8">
-          <div className="flex items-center justify-center space-x-4 mb-6">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-4 sm:mb-6">
             {[1, 2, 3, 4].map((step) => (
               <div
                 key={step}
-                className={`w-12 h-12 rounded-full flex items-center justify-center font-bold ${
+                className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold text-sm sm:text-base ${
                   currentStep >= step
                     ? "bg-travel-primary text-white"
                     : "bg-gray-200 text-gray-500"
@@ -208,7 +209,7 @@ export default function ItineraryGenerator() {
               </div>
             ))}
           </div>
-          <div className="text-center text-sm text-gray-600">
+          <div className="text-center text-xs sm:text-sm text-gray-600">
             {currentStep === 1 && "Trip Overview"}
             {currentStep === 2 && "Daily Activities"}
             {currentStep === 3 && "Flights & Hotels"}
@@ -226,7 +227,7 @@ export default function ItineraryGenerator() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="customerName">Customer Name</Label>
                   <Input
@@ -382,7 +383,7 @@ export default function ItineraryGenerator() {
                     {day.activities.map((activity, activityIndex) => (
                       <div
                         key={activity.id}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-2 p-3 border rounded mb-2"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 border rounded mb-2"
                       >
                         <Input
                           placeholder="Activity name"
@@ -439,7 +440,7 @@ export default function ItineraryGenerator() {
                             ].description = e.target.value;
                             setDailyItinerary(updatedDays);
                           }}
-                          className="md:col-span-2"
+                          className="sm:col-span-2"
                         />
                       </div>
                     ))}
@@ -460,7 +461,7 @@ export default function ItineraryGenerator() {
                     {day.transfers.map((transfer, transferIndex) => (
                       <div
                         key={transfer.id}
-                        className="grid grid-cols-1 md:grid-cols-3 gap-2 p-3 border rounded mb-2"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-3 border rounded mb-2"
                       >
                         <Input
                           placeholder="Transfer type"
@@ -537,7 +538,7 @@ export default function ItineraryGenerator() {
               </Card>
             ))}
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => setCurrentStep(1)}
                 variant="outline"
@@ -580,7 +581,7 @@ export default function ItineraryGenerator() {
                 {flights.map((flight, index) => (
                   <div
                     key={flight.id}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-2 p-3 border rounded mb-2"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-3 border rounded mb-2"
                   >
                     <Input
                       placeholder="From"
@@ -646,7 +647,7 @@ export default function ItineraryGenerator() {
                           parseFloat(e.target.value) || 0;
                         setFlights(updatedFlights);
                       }}
-                      className="md:col-span-2"
+                      className="sm:col-span-2 lg:col-span-2"
                     />
                   </div>
                 ))}
@@ -674,7 +675,7 @@ export default function ItineraryGenerator() {
                 {hotels.map((hotel, index) => (
                   <div
                     key={hotel.id}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-2 p-3 border rounded mb-2"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-3 border rounded mb-2"
                   >
                     <Input
                       placeholder="Hotel Name"
@@ -741,7 +742,7 @@ export default function ItineraryGenerator() {
               </CardContent>
             </Card>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => setCurrentStep(2)}
                 variant="outline"
@@ -798,7 +799,7 @@ export default function ItineraryGenerator() {
                 </div>
               </div>
 
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   onClick={() => setCurrentStep(3)}
                   variant="outline"
@@ -811,8 +812,9 @@ export default function ItineraryGenerator() {
                   variant="outline"
                   className="flex-1"
                 >
-                  <Eye className="w-5 h-5 mr-2" />
-                  Preview Itinerary
+                  <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  <span className="hidden sm:inline">Preview Itinerary</span>
+                  <span className="sm:hidden">Preview</span>
                 </Button>
                 <Button
                   onClick={generatePDF}
@@ -821,13 +823,15 @@ export default function ItineraryGenerator() {
                 >
                   {isGeneratingPDF ? (
                     <>
-                      <div className="w-5 h-5 mr-2 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                      Generating...
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                      <span className="hidden sm:inline">Generating...</span>
+                      <span className="sm:hidden">Gen...</span>
                     </>
                   ) : (
                     <>
-                      <Download className="w-5 h-5 mr-2" />
-                      Download PDF
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      <span className="hidden sm:inline">Download PDF</span>
+                      <span className="sm:hidden">PDF</span>
                     </>
                   )}
                 </Button>
