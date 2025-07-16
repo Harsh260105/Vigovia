@@ -1,7 +1,7 @@
 # Vigovia - Travel Itinerary Generator
 
 <div align="center">
-  <img src="public/vigovia-logo.svg" alt="Vigovia Logo" width="200"/>
+  <img src="public/vigovia-logo-1.png" alt="Vigovia Logo" width="200"/>
   <p><em>Create beautiful, professional travel itineraries in minutes</em></p>
 </div>
 
