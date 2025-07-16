@@ -61,7 +61,7 @@ export default function Footer() {
       <div className="bg-white border-t border-gray-200">
         {/* Tour Packages - Top Section */}
         <div className="max-w-7xl mx-auto px-4 py-4 border-b border-gray-200">
-          <div className="flex flex-wrap gap-x-3 sm:gap-x-5 gap-y-1 justify-center text-[10px] sm:text-[12px]">
+          <div className="flex flex-wrap gap-x-3 sm:gap-x-5 gap-y-2 justify-center text-[10px] sm:text-[12px]">
             {allPackages.map((pkg, index) => (
               <a
                 key={index}
