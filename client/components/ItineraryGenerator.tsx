@@ -194,7 +194,7 @@ export default function ItineraryGenerator() {
 
       <div className="max-w-7xl mx-auto p-4 sm:p-6">
         {/* Progress Steps */}
-        <div className="mb-6 sm:mb-8">
+        <div className="mb-6 sm:mb-8 mt-3 sm:mt-3">
           <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-4 sm:mb-6">
             {[1, 2, 3, 4].map((step) => (
               <div
