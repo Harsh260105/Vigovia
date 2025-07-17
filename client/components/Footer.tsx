@@ -106,7 +106,7 @@ export default function Footer() {
               <div className="flex-shrink-0 sm:pl-8">
                 <img src="../vigovia-logo.svg" alt="Vigovia" className="w-24 sm:w-32" />
               </div>
-              <div className="flex-1 flex justify-center mr-10">
+              <div className="flex-1 flex justify-center sm:mr-10">
                 <div>
                   <div className="text-xs text-gray-500 mb-2.5 text-center">
                     Payments
